@@ -30,6 +30,7 @@ services:
     image: mongo:latest
     restart: always
     volumes:
+      - ./mongodb.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
       - mongodb-data:/data/db
     networks:
       app-network:
